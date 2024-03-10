@@ -1,0 +1,141 @@
+@import url('./reset.css');
+
+.form {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: center;
+  padding-top: 36px;
+  padding-bottom: 8px;
+}
+
+#search-field {
+  width: 272px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #808080;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  padding-left: 16px;
+}
+
+#search-field:hover {
+  border-color: #000000;
+  outline: transparent;
+}
+
+#search-field:focus {
+  outline: transparent;
+  border-color: #4e75ff;
+}
+
+button {
+  width: 91px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  background: #4e75ff;
+}
+
+button:hover,
+button:focus {
+  background-color: #6c8cff;
+  outline: transparent;
+}
+
+/*====== loader-styles ======*/
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  display: none;
+  border: 4px solid #0000;
+  border-radius: 50%;
+  border-color: #ccc #0000;
+  animation: l16 1s infinite linear;
+  margin-left: auto;
+  margin-right: auto;
+}
+.loader::before,
+.loader::after {    
+  content: "";
+  grid-area: 1/1;
+  margin: 2px;
+  border: inherit;
+  border-radius: 50%;
+}
+.loader::before {
+  border-color: #f03355 #0000;
+  animation: inherit; 
+  animation-duration: .5s;
+  animation-direction: reverse;
+}
+.loader::after {
+  margin: 8px;
+}
+@keyframes l16 { 
+  100%{transform: rotate(1turn)}
+}
+
+/*====== /loader styles ======*/
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  width: 1128px;
+  margin-top: 32px;
+  margin-bottom: 36px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  width: calc((100% - 48px) / 3);
+  /* height: 200px; */
+  border: 1px solid #808080;
+}
+
+.gallery-image-tumb {
+  width: 100%;
+  /* height: 152px; */
+}
+
+.gallery-image {
+  object-fit: cover;
+}
+
+.image-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.image-info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-info-item-title {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.image-info-item-text {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
