@@ -5,10 +5,11 @@ import "izitoast/dist/css/iziToast.min.css";
 import searchImages from './js/pixabay-api';
 import createMarcupGallery from './js/render-functions';
 
+
 const form = document.querySelector('.form');
 const gallery = document.querySelector('.gallery');
-const loader = document.querySelector('.loader');
 const btn = document.querySelector('#load-more-btn');
+const loader = document.querySelector('.loader');
 
 const lightbox = new SimpleLightbox('.gallery a',
     {
@@ -19,7 +20,7 @@ const lightbox = new SimpleLightbox('.gallery a',
     let tagImage;
     let perPage = 15;
     let page;
-
+   
 function showMessageError(textMes) {
     iziToast.error({
         message: textMes,
@@ -30,7 +31,7 @@ function showMessageError(textMes) {
         titleColor: '#FFFFFF',
         messageColor: '#FFFFFF',
         theme: 'dark',
-    }); 
+    });
 }
 
 async function showGallery(tagImage) {
