@@ -1,19 +1,23 @@
+import axios from 'axios';
+
 export default searchImages;
 
-function searchImages(tagImage) {
+async function searchImages(tagImage, page, perPage) {
 
-    const searchParams = new URLSearchParams({
-        key: '42790970-549b29792af5c5ee610ad8401',
-        image_type: 'photo',
-        orientation: 'horizontal',
-        safesearch: 'true',
-    })
+    axios.defaults.baseURL = 'https://pixabay.com/api/';
 
-    return fetch(`https://pixabay.com/api/?${searchParams}&q=${tagImage}`)
-    .then((response) => {
-        if (!response.ok) {
-            throw new Error(response.status);
+    const searchParams = {
+        params: {
+            key: '42790970-549b29792af5c5ee610ad8401',
+            image_type: 'photo',
+            orientation: 'horizontal',
+            safesearch: 'true',
+            per_page: perPage,
+            page: page,
+            q: `${tagImage}`,
         }
-        return response.json();
-    })
+    }
+
+    const response = await axios.get('', searchParams);
+        return response.data;
 }
